@@ -23,13 +23,13 @@ function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [review, setReview] = useState(0);
-  const currentReview = reviews[review] ?? reviews[0]!;
   const nav = [{ label: "Home", href: "#home" }, { label: "About Us", href: "#about" }, { label: "Services", href: "#services" }, { label: "Cataract Surgery", href: "#cataract" }, { label: "Our Locations", href: "#locations" }, { label: "Patient Stories", href: "#stories" }, { label: "Contact", href: "#contact" }];
   const reviews = [
     { quote: "My vision is much clearer after cataract surgery. The staff was very supportive and the experience was excellent.", name: "Patient", city: "Sahiwal" },
     { quote: "The team explained every step clearly and made the eye checkup comfortable for our family.", name: "Patient", city: "Pakpattan" },
     { quote: "Professional care, modern equipment and a welcoming team. I would recommend an eye assessment.", name: "Patient", city: "Sahiwal" },
   ];
+  const currentReview = reviews[review] ?? reviews[0]!;
   return <div className="nova-site" id="home">
     <header className="nova-header"><a href="#home" className="nova-logo" aria-label="NOVA Eye Centre home"><span className="logo-eye"><Eye size={34}/></span><span><b>NOVA</b><small>EYE CENTRE</small></span></a>
       <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X/> : <Menu/>}</button>
