@@ -23,6 +23,7 @@ function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [review, setReview] = useState(0);
+  const currentReview = reviews[review] ?? reviews[0]!;
   const nav = [{ label: "Home", href: "#home" }, { label: "About Us", href: "#about" }, { label: "Services", href: "#services" }, { label: "Cataract Surgery", href: "#cataract" }, { label: "Our Locations", href: "#locations" }, { label: "Patient Stories", href: "#stories" }, { label: "Contact", href: "#contact" }];
   const reviews = [
     { quote: "My vision is much clearer after cataract surgery. The staff was very supportive and the experience was excellent.", name: "Patient", city: "Sahiwal" },
