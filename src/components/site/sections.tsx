@@ -8,8 +8,15 @@ import { Cta, Logo, SectionHeading } from "./cta";
 import clinicPhoto from "@/assets/nova-sahiwal-clinic.jpg.asset.json";
 import examPhoto from "@/assets/eye-examination.png.asset.json";
 import theatrePhoto from "@/assets/nova-operation-theatre.jpg.asset.json";
-import { ClinicIllustration, EyeChartIllustration } from "./illustrations";
+import sahiwalSign from "@/assets/nova-sahiwal-sign.png.asset.json";
+import pakpattanSign from "@/assets/nova-pakpattan-sign.png.asset.json";
+import { EyeChartIllustration } from "./illustrations";
 import { branches, clinic, navLinks, primaryBranch } from "./clinic-data";
+
+const branchSigns: Record<string, string> = {
+  sahiwal: sahiwalSign.url,
+  pakpattan: pakpattanSign.url,
+};
 
 /* 2. Hero */
 export function Hero() {
@@ -229,7 +236,14 @@ export function Locations() {
                   <h3 className="text-xl font-bold text-primary">{b.city} Branch</h3>
                   <p className="text-sm font-medium text-muted-foreground">{b.hospital}</p>
                 </div>
-                <div className="ml-auto hidden sm:block"><ClinicIllustration /></div>
+                <img
+                  src={branchSigns[b.id]}
+                  alt={`NOVA Eye Centre ${b.city} signboard`}
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                  className="ml-auto hidden size-20 shrink-0 object-contain drop-shadow-md sm:block"
+                />
               </div>
               <div className="space-y-4 p-6">
                 <p className="flex gap-3 text-sm text-muted-foreground"><MapPin className="size-5 shrink-0 text-primary" />{b.address}</p>
