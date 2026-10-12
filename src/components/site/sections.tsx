@@ -6,7 +6,8 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Cta, Logo, SectionHeading } from "./cta";
 import clinicPhoto from "@/assets/nova-sahiwal-clinic.jpg.asset.json";
-import { ClinicIllustration, ExamIllustration, EyeChartIllustration, LensIllustration } from "./illustrations";
+import theatrePhoto from "@/assets/nova-operation-theatre.jpg.asset.json";
+import { ClinicIllustration, ExamIllustration, EyeChartIllustration } from "./illustrations";
 import { branches, clinic, navLinks, primaryBranch } from "./clinic-data";
 
 /* 2. Hero */
@@ -125,7 +126,14 @@ export function Cataract() {
           </div>
         </div>
         <div className="rounded-3xl border border-ink-foreground/10 bg-ink-foreground/5 p-8 md:p-10">
-          <div className="mx-auto mb-6 max-w-xs"><LensIllustration /></div>
+          <img
+            src={theatrePhoto.url}
+            alt="NOVA Eye Centre eye surgeon in the operation theatre under surgical lights"
+            width={1440}
+            height={1920}
+            loading="lazy"
+            className="mb-8 aspect-[4/3] w-full rounded-2xl object-cover object-[center_60%]"
+          />
           <p className="text-sm uppercase tracking-widest text-ink-muted">Pricing</p>
           <p className="mt-3 font-display text-4xl font-extrabold md:text-5xl">PKR 25,000 <span className="text-2xl font-semibold text-ink-muted">to</span> 120,000</p>
           <p className="mt-4 text-ink-muted">The final cost depends on the lens you choose. Your doctor will recommend suitable options after an examination.</p>
