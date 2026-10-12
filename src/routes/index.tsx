@@ -1,43 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/site/header";
-import {
-  Cataract, Faqs, FinalCta, Hero, Locations, Services, SiteFooter, SpecialOffer, Testimonials, WhyUs,
-} from "@/components/site/sections";
+import { useState } from "react";
+import { Eye, ShieldCheck, Users, MapPin, Phone, ArrowRight, Menu, X, CheckCircle2, Coins, MessageCircle, ChevronDown, ChevronUp, Star, Clock, Stethoscope } from "lucide-react";
 
-const title = "NOVA EYE CENTRE — Expert Eye Care in Sahiwal & Pakpattan";
-const description =
-  "Eye checkups for PKR 200, cataract surgery and treatment for glaucoma, squint, ptosis and more. Branches at Al-Rehmat Hospital Sahiwal and Al-Shifa Hospital Pakpattan.";
+export const Route = createFileRoute("/")({ component: Index });
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
-});
+const sahPhone = "0300-6913585";
+const pakPhone = "0325-6553573";
+const wa = "https://wa.me/923006913585";
+const faqs = [
+  ["What is cataract and how is it treated?", "A cataract is clouding of the eye’s natural lens. An eye examination helps determine when treatment or surgery may be appropriate."],
+  ["How much does cataract surgery cost?", "Costs depend on the lens selected and your treatment plan. Contact our team for an examination and a clear estimate."],
+  ["Do you perform surgery without injection and suture?", "Some procedures may be performed using modern techniques with minimal or no sutures. Your surgeon will explain the suitable option after examining your eyes."],
+  ["Can children get an eye checkup here?", "Yes. NOVA Eye Centre welcomes children for age-appropriate vision assessments."],
+  ["How can glaucoma be detected early?", "Glaucoma may not cause noticeable early symptoms. Regular eye examinations help assess eye pressure and optic nerve health."]
+];
+const services = [
+  {title:"Comprehensive Eye Checkup",desc:"Routine vision assessment and eye health screening for all ages.",icon:Eye},
+  {title:"Cataract Surgery",desc:"Modern surgical options and lens choices tailored to your needs.",icon:ShieldCheck},
+  {title:"Children’s Eye Care",desc:"Comfortable, age-appropriate vision checks for children.",icon:Users},
+  {title:"Eye Disease Assessment",desc:"Professional assessment and guidance for common eye concerns.",icon:Stethoscope}
+];
 
-function Index() {
-  return (
-    <>
-      <SiteHeader />
-      <main>
-        <Hero />
-        <SpecialOffer />
-        <Cataract />
-        <Services />
-        <WhyUs />
-        <Locations />
-        <Testimonials />
-        <Faqs />
-        <FinalCta />
-      </main>
-      <SiteFooter />
-    </>
-  );
+function Brand(){return <a href="#home" className="nova-brand" aria-label="NOVA Eye Centre home"><span className="brand-mark"><Eye size={34}/><i/></span><span><b>NOVA</b><small>EYE CENTRE</small></span></a>}
+function Index(){
+ const [menu,setMenu]=useState(false); const [faq,setFaq]=useState<number|null>(0); const [story,setStory]=useState(0);
+ const nav=[["Home","#home"],["About Us","#about"],["Services","#services"],["Cataract Surgery","#cataract"],["Our Locations","#locations"],["Patient Stories","#stories"],["Contact","#contact"]];
+ const stories=[
+  {quote:"My vision is much clearer after cataract surgery. The team was supportive and explained the process clearly.",name:"Patient",place:"Sahiwal"},
+  {quote:"The staff made our eye checkup comfortable and answered all our questions patiently.",name:"Patient",place:"Pakpattan"},
+  {quote:"A welcoming clinic with professional care and a convenient location.",name:"Patient",place:"Sahiwal"}
+ ];
+ return <div className="nova">
+  <header className="site-header"><Brand/><button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button><nav className={menu?"site-nav open":"site-nav"}>{nav.map(([t,h])=><a key={t} href={h} onClick={()=>setMenu(false)}>{t}</a>)}</nav><div className="head-ctas"><a className="btn btn-secondary btn-sm" href={"tel:"+sahPhone}><Phone size={15}/> Call Us</a><a className="btn btn-primary btn-sm" href={wa} target="_blank" rel="noreferrer"><MessageCircle size={15}/> WhatsApp</a></div></header>
+  <main>
+   <section className="hero section-grid" id="home"><div className="hero-content"><span className="eyebrow">YOUR VISION. OUR PRIORITY.</span><h1>Expert Eye Care<br/><span>in Sahiwal &amp; Pakpattan</span></h1><p>From routine eye checkups to cataract care, NOVA EYE CENTRE brings modern, compassionate eye care closer to you and your family.</p><div className="quick-benefits"><div><Users/><span><b>Experienced Team</b><small>Patient-first care</small></span></div><div><Eye/><span><b>Modern Eye Care</b><small>For all ages</small></span></div><div><ShieldCheck/><span><b>Advanced Options</b><small>Care you can trust</small></span></div><div><MapPin/><span><b>Two Locations</b><small>Sahiwal &amp; Pakpattan</small></span></div></div><div className="actions"><a className="btn btn-primary" href={wa} target="_blank" rel="noreferrer"><MessageCircle/>Book an Eye Checkup</a><a className="btn btn-secondary" href={"tel:"+sahPhone}><Phone/>Call for Appointment</a></div><div className="hero-note"><ShieldCheck size={16}/> Friendly, professional care for your whole family</div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85" alt="Eye care professional consulting a patient"/><div className="checkup-badge"><span>Eye Checkup</span><b>PKR 200</b><small>Ask us about availability</small></div></div></section>
+   <section className="offer section-grid"><div className="offer-content"><span className="eyebrow">SPECIAL OFFER</span><h2>Eye Checkup Only<br/><span>PKR 200</span></h2><p>Take the first step towards healthier vision with an eye examination by an eye care professional.</p><div className="actions"><a className="btn btn-primary" href={wa} target="_blank" rel="noreferrer"><MessageCircle/>Book on WhatsApp</a><a className="btn btn-secondary" href={"tel:"+sahPhone}><Phone/>Call Now</a></div></div><div className="offer-image"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1100&q=85" alt="Child smiling during a health visit"/></div></section>
+   <section className="cataract section-grid" id="cataract"><div className="cataract-content"><span className="eyebrow">ADVANCED EYE CARE</span><h2>Cataract Surgery</h2><p>Explore modern cataract treatment options with guidance from our eye care team.</p><ul><li><CheckCircle2/>Modern surgical techniques</li><li><CheckCircle2/>Lens options to suit your needs</li><li><CheckCircle2/>Clear discussion of treatment costs</li><li><CheckCircle2/>Personalised aftercare guidance</li></ul><a className="btn btn-white" href="#contact">Ask About Cataract Care <ArrowRight/></a></div><div className="cataract-image"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=85" alt="Ophthalmology care in a clinical environment"/></div></section>
+   <section className="section-intro" id="services"><span className="eyebrow">OUR SERVICES</span><h2>Comprehensive Eye Care for All Ages</h2><p>From routine checkups to advanced treatment, we help you take care of your vision.</p><a className="btn btn-primary" href="#service-list">Explore Our Services <ArrowRight/></a></section>
+   <section className="services-grid" id="service-list">{services.map(({title,desc,icon:Icon})=><article className="service-card" key={title}><span className="service-icon"><Icon/></span><h3>{title}</h3><p>{desc}</p><a href="#contact">Learn more <ArrowRight size={15}/></a></article>)}</section>
+   <section className="featured section-grid"><div className="featured-content"><span className="eyebrow">FEATURED SERVICE</span><h2>Cataract Care for Clearer Vision</h2><p>Understand your options, ask questions, and get a personalised recommendation after an eye assessment.</p><a className="btn btn-primary" href="#cataract">Explore Cataract Care <ArrowRight/></a></div><div className="featured-image"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1100&q=85" alt="Eye specialist providing a consultation"/></div></section>
+   <section className="why" id="about"><span className="eyebrow">WHY NOVA EYE CENTRE?</span><h2>Professional care. Personal attention.</h2><p>Our focus is accessible, patient-centred eye care for every stage of life.</p><div className="why-grid"><article><span><Users/></span><h3>Experienced Team</h3><p>Care that puts patients and families first.</p></article><article><span><Eye/></span><h3>Modern Technology</h3><p>Equipment and assessment to support eye health.</p></article><article><span><ShieldCheck/></span><h3>Clear Guidance</h3><p>Understand your options before treatment.</p></article><article><span><Coins/></span><h3>Affordable Care</h3><p>Accessible checkups and treatment options.</p></article></div></section>
+   <section className="locations" id="locations"><div className="location-inner"><span className="eyebrow">OUR LOCATIONS</span><h2>Two Convenient Branches</h2><p>Visit us in Sahiwal or Pakpattan for your eye care needs.</p><div className="location-grid"><article className="location-card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=85" alt="Modern medical building"/><div><h3><MapPin/>Sahiwal Branch</h3><p>Al-Rehmat Hospital,<br/>Sahiwal</p><a href={"tel:"+sahPhone}><Phone/> {sahPhone}</a><a href={wa} target="_blank" rel="noreferrer"><MessageCircle/> WhatsApp</a><a className="btn btn-primary direction" href="https://maps.google.com/?q=Al-Rehmat+Hospital+Sahiwal" target="_blank" rel="noreferrer">Get Directions <ArrowRight/></a></div></article><article className="location-card"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=85" alt="Clinic building exterior"/><div><h3><MapPin/>Pakpattan Branch</h3><p>Al-Shifa Hospital,<br/>Pakpattan</p><a href={"tel:"+pakPhone}><Phone/> {pakPhone}</a><a href="https://wa.me/923256553573" target="_blank" rel="noreferrer"><MessageCircle/> WhatsApp</a><a className="btn btn-primary direction" href="https://maps.google.com/?q=Al-Shifa+Hospital+Pakpattan" target="_blank" rel="noreferrer">Get Directions <ArrowRight/></a></div></article></div></div></section>
+   <section className="stories" id="stories"><span className="eyebrow">PATIENT STORIES</span><h2>Real People. Real Experiences.</h2><p>Patient experiences help us keep care personal and welcoming.</p><div className="story-slider"><button className="slider-arrow" aria-label="Previous story" onClick={()=>setStory((story+stories.length-1)%stories.length)}>‹</button><article className="story-card"><div className="patient-icon"><Users/></div><div><div className="stars"><Star/><Star/><Star/><Star/><Star/></div><p>“{stories[story].quote}”</p><b>{stories[story].name} · {stories[story].place}</b></div></article><button className="slider-arrow" aria-label="Next story" onClick={()=>setStory((story+1)%stories.length)}>›</button></div></section>
+   <section className="faq"><span className="eyebrow">NEED TO KNOW?</span><h2>Frequently Asked Questions</h2><p>Answers to common questions about eye care and appointments.</p><div className="faq-list">{faqs.map(([q,a],i)=><article className="faq-item" key={q}><button onClick={()=>setFaq(faq===i?null:i)} aria-expanded={faq===i}><span>{q}</span>{faq===i?<ChevronUp/>:<ChevronDown/>}</button>{faq===i&&<p>{a}</p>}</article>)}</div></section>
+   <section className="final-cta" id="contact"><div><span className="eyebrow">TAKE THE FIRST STEP</span><h2>Make Your Vision a Priority</h2><p>Contact NOVA EYE CENTRE to arrange your eye checkup in Sahiwal or Pakpattan.</p></div><div className="actions"><a className="btn btn-primary" href={wa} target="_blank" rel="noreferrer"><MessageCircle/>WhatsApp Us</a><a className="btn btn-ghost" href={"tel:"+sahPhone}><Phone/>Call Us Today</a></div></section>
+  </main>
+  <footer className="footer"><div className="footer-main"><Brand/><div><h3>Quick Links</h3><div className="footer-links">{nav.slice(0,6).map(([t,h])=><a key={t} href={h}>{t}</a>)}</div></div><div><h3>Our Locations</h3><p><MapPin/> Al-Rehmat Hospital, Sahiwal</p><a href={"tel:"+sahPhone}>{sahPhone}</a><p><MapPin/> Al-Shifa Hospital, Pakpattan</p><a href={"tel:"+pakPhone}>{pakPhone}</a></div><div><h3>Contact NOVA</h3><a href={wa} target="_blank" rel="noreferrer"><MessageCircle/> WhatsApp us</a><p><Clock/> Call for appointment timings</p></div></div><div className="footer-bottom"><span>© 2026 NOVA EYE CENTRE. All rights reserved.</span><span>Clearer Vision. Brighter Tomorrows.</span></div></footer>
+ </div>
 }
