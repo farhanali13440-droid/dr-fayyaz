@@ -134,10 +134,7 @@ export function Cataract() {
             loading="lazy"
             className="mb-8 aspect-[4/3] w-full rounded-2xl object-cover object-[center_60%]"
           />
-          <p className="text-sm uppercase tracking-widest text-ink-muted">Pricing</p>
-          <p className="mt-3 font-display text-4xl font-extrabold md:text-5xl">PKR 25,000 <span className="text-2xl font-semibold text-ink-muted">to</span> 120,000</p>
-          <p className="mt-4 text-ink-muted">The final cost depends on the lens you choose. Your doctor will recommend suitable options after an examination.</p>
-          <div className="mt-8 grid grid-cols-3 gap-3 text-center">
+          <div className="grid grid-cols-3 gap-3 text-center">
             {["Standard", "Premium", "Advanced"].map((l) => (
               <div key={l} className="rounded-2xl border border-ink-foreground/10 p-4">
                 <Glasses className="mx-auto size-6 text-accent" />
