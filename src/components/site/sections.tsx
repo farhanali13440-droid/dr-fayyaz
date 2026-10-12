@@ -6,6 +6,7 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Cta, Logo, SectionHeading } from "./cta";
 import { EyeVisual } from "./eye-visual";
+import { ClinicIllustration, ExamIllustration, EyeChartIllustration, LensIllustration } from "./illustrations";
 import { branches, clinic, navLinks, primaryBranch } from "./clinic-data";
 
 /* 2. Hero */
@@ -66,8 +67,16 @@ export function SpecialOffer() {
               <Cta href={`tel:${primaryBranch.phoneTel}`} variant="primary" size="lg"><Phone />Call Now</Cta>
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="grid size-56 place-items-center rounded-full bg-primary text-center text-primary-foreground shadow-lift ring-8 ring-primary-soft">
+          <div className="relative flex items-center justify-center gap-4">
+            <EyeChartIllustration />
+            <div className="absolute -bottom-4 right-0 grid size-36 place-items-center rounded-full bg-primary text-center text-primary-foreground shadow-lift ring-8 ring-primary-soft sm:right-6 lg:-right-2">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-primary-foreground/70">Only</span>
+                <p className="font-display text-4xl font-extrabold">200</p>
+                <span className="text-xs font-semibold text-accent">PKR · Checkup</span>
+              </div>
+            </div>
+            <div className="hidden grid size-56 place-items-center rounded-full bg-primary text-center text-primary-foreground shadow-lift ring-8 ring-primary-soft">
               <div>
                 <span className="text-sm uppercase tracking-widest text-primary-foreground/70">Only</span>
                 <p className="font-display text-5xl font-extrabold">200</p>
@@ -106,6 +115,7 @@ export function Cataract() {
           </div>
         </div>
         <div className="rounded-3xl border border-ink-foreground/10 bg-ink-foreground/5 p-8 md:p-10">
+          <div className="mx-auto mb-6 max-w-xs"><LensIllustration /></div>
           <p className="text-sm uppercase tracking-widest text-ink-muted">Pricing</p>
           <p className="mt-3 font-display text-4xl font-extrabold md:text-5xl">PKR 25,000 <span className="text-2xl font-semibold text-ink-muted">to</span> 120,000</p>
           <p className="mt-4 text-ink-muted">The final cost depends on the lens you choose. Your doctor will recommend suitable options after an examination.</p>
@@ -168,6 +178,7 @@ export function WhyUs() {
       <div className="container-site grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
         <div>
           <SectionHeading align="left" eyebrow="Why choose us" title="Care you can see. Trust you can feel." intro="NOVA EYE CENTRE brings dependable, affordable eye care to two communities." />
+          <div className="mt-8"><ExamIllustration /></div>
           {/* PLACEHOLDER: add verified doctor name and qualifications here */}
           <div className="mt-8 rounded-2xl border border-dashed bg-card p-5 text-sm text-muted-foreground">
             Doctor profile and qualifications will be added once confirmed by the clinic.
@@ -202,6 +213,7 @@ export function Locations() {
                   <h3 className="text-xl font-bold text-primary">{b.city} Branch</h3>
                   <p className="text-sm font-medium text-muted-foreground">{b.hospital}</p>
                 </div>
+                <div className="ml-auto hidden sm:block"><ClinicIllustration /></div>
               </div>
               <div className="space-y-4 p-6">
                 <p className="flex gap-3 text-sm text-muted-foreground"><MapPin className="size-5 shrink-0 text-primary" />{b.address}</p>
