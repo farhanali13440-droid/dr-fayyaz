@@ -6,8 +6,9 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Cta, Logo, SectionHeading } from "./cta";
 import clinicPhoto from "@/assets/nova-sahiwal-clinic.jpg.asset.json";
+import examPhoto from "@/assets/eye-examination.png.asset.json";
 import theatrePhoto from "@/assets/nova-operation-theatre.jpg.asset.json";
-import { ClinicIllustration, ExamIllustration, EyeChartIllustration } from "./illustrations";
+import { ClinicIllustration, EyeChartIllustration } from "./illustrations";
 import { branches, clinic, navLinks, primaryBranch } from "./clinic-data";
 
 /* 2. Hero */
@@ -193,7 +194,7 @@ export function WhyUs() {
       <div className="container-site grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
         <div>
           <SectionHeading align="left" eyebrow="Why choose us" title="Care you can see. Trust you can feel." intro="NOVA EYE CENTRE brings dependable, affordable eye care to two communities." />
-          <div className="mt-8"><ExamIllustration /></div>
+          <img src={examPhoto.url} alt="Eye specialist examining a patient with a slit-lamp microscope" width={1536} height={1024} loading="lazy" className="mt-8 w-full rounded-3xl" />
           {/* PLACEHOLDER: add verified doctor name and qualifications here */}
           <div className="mt-8 rounded-2xl border border-dashed bg-card p-5 text-sm text-muted-foreground">
             Doctor profile and qualifications will be added once confirmed by the clinic.
