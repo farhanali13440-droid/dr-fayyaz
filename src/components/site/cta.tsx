@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import type { AnchorHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
+import novaLogo from "@/assets/nova-logo.png.asset.json";
 
 const ctaVariants = cva(
   "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&_svg]:size-4 [&_svg]:shrink-0",
@@ -74,26 +75,23 @@ export function SectionHeading({
   );
 }
 
-export function Logo({ tone = "default" }: { tone?: "default" | "ink" }) {
-  // PLACEHOLDER mark: swap for the official clinic logo when provided.
+export function Logo({ tone }: { tone?: "default" | "ink" }) {
+  // Official NOVA EYE CENTRE mark (illuminated sign logo, background removed).
+  void tone;
   return (
     <span className="flex items-center gap-2.5">
-      {/* Infinity mark in brand royal blue with sky-blue accent dot */}
-      <svg viewBox="0 0 48 32" className="h-9 w-12" aria-hidden="true">
-        <path
-          d="M24 16c-4-5.5-7.5-8.5-11.5-8.5a8.5 8.5 0 0 0 0 17c4 0 7.5-3 11.5-8.5Zm0 0c4 5.5 7.5 8.5 11.5 8.5a8.5 8.5 0 0 0 0-17c-4 0-7.5 3-11.5 8.5Z"
-          fill="none"
-          strokeWidth="4.5"
-          strokeLinecap="round"
-          className={tone === "ink" ? "stroke-ink-foreground" : "stroke-primary"}
-        />
-        <circle cx="38" cy="7" r="4" className="fill-accent stroke-background" strokeWidth="2" />
-      </svg>
+      <img
+        src={novaLogo.url}
+        alt="NOVA Eye Centre"
+        width={1024}
+        height={1024}
+        className="size-11 shrink-0 object-contain drop-shadow-sm"
+      />
       <span className="leading-none">
-        <span className={cn("block font-display text-xl font-extrabold tracking-tight", tone === "ink" ? "text-ink-foreground" : "text-primary")}>
+        <span className="block font-display text-xl font-extrabold tracking-tight text-primary">
           NOVA
         </span>
-        <span className={cn("block text-[0.62rem] font-bold tracking-[0.28em]", tone === "ink" ? "text-ink-muted" : "text-foreground")}>
+        <span className="block text-[0.62rem] font-bold tracking-[0.28em] text-foreground">
           EYE CENTRE
         </span>
       </span>
