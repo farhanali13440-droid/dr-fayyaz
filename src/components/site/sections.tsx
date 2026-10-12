@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Cta, Logo, SectionHeading } from "./cta";
-import { EyeVisual } from "./eye-visual";
+import clinicPhoto from "@/assets/nova-sahiwal-clinic.jpg.asset.json";
 import { ClinicIllustration, ExamIllustration, EyeChartIllustration, LensIllustration } from "./illustrations";
 import { branches, clinic, navLinks, primaryBranch } from "./clinic-data";
 
@@ -41,7 +41,17 @@ export function Hero() {
           </ul>
         </div>
         <div className="animate-fade-up relative [animation-delay:150ms]">
-          <EyeVisual />
+          <div className="relative mx-auto max-w-md">
+            <div className="absolute -inset-3 rounded-[2rem] bg-accent-soft" />
+            <img
+              src={clinicPhoto.url}
+              alt="Eye specialist at NOVA Eye Centre Sahiwal beside a slit-lamp examination microscope"
+              width={1440}
+              height={1920}
+              fetchPriority="high"
+              className="relative aspect-[4/5] w-full rounded-3xl object-cover object-top shadow-lift"
+            />
+          </div>
           <div className="absolute bottom-4 left-0 flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-lift sm:left-4">
             <span className="grid size-11 place-items-center rounded-xl bg-primary text-primary-foreground"><ScanEye className="size-5" /></span>
             <span><span className="block text-xs text-muted-foreground">Eye checkup</span><b className="font-display text-lg text-primary">PKR 200</b></span>
