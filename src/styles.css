@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* NOVA brand: Royal Blue #1646D9, Sky Blue #83D5F0, White, Deep Navy #10264D */
+/* NOVA brand (from logo): Indigo Navy #1B2A80, Cyan #29B6D9, White, Deep Navy #0B1550 */
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -47,32 +47,32 @@
 :root {
   --radius: 1rem;
   --background: #ffffff;
-  --foreground: #10264d;
+  --foreground: #0b1550;
   --card: #ffffff;
-  --card-foreground: #10264d;
+  --card-foreground: #0b1550;
   --popover: #ffffff;
-  --popover-foreground: #10264d;
-  --primary: #1646d9;
+  --popover-foreground: #0b1550;
+  --primary: #1b2a80;
   --primary-foreground: #ffffff;
-  --primary-soft: oklch(0.96 0.025 255);
+  --primary-soft: oklch(0.95 0.03 270);
   --secondary: oklch(0.982 0.012 225);
-  --secondary-foreground: #10264d;
+  --secondary-foreground: #0b1550;
   --muted: oklch(0.97 0.01 240);
   --muted-foreground: oklch(0.47 0.05 258);
-  --accent: #83d5f0;
-  --accent-foreground: #10264d;
+  --accent: #29b6d9;
+  --accent-foreground: #0b1550;
   --accent-soft: oklch(0.96 0.035 220);
   /* WhatsApp buttons stay on-brand: deep navy */
-  --whatsapp: #10264d;
+  --whatsapp: #0b1550;
   --whatsapp-foreground: #ffffff;
-  --ink: #10264d;
+  --ink: #0b1550;
   --ink-foreground: #ffffff;
   --ink-muted: oklch(0.85 0.03 240);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #ffffff;
   --border: oklch(0.925 0.015 240);
   --input: oklch(0.925 0.015 240);
-  --ring: #1646d9;
+  --ring: #1b2a80;
   --shadow-soft-value: 0 1px 2px rgb(16 38 77 / 0.05), 0 8px 24px -12px rgb(22 70 217 / 0.18);
   --shadow-lift-value: 0 24px 48px -24px rgb(22 70 217 / 0.35);
 }
