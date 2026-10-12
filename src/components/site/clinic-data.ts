@@ -33,18 +33,18 @@ export const branches: Branch[] = [
     phoneDisplay: "0300-6913585",
     phoneTel: "+923006913585",
     whatsapp: "https://wa.me/923006913585?text=" + encodeURIComponent("Assalam o Alaikum, I would like to book an eye checkup at NOVA EYE CENTRE Sahiwal."),
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("6, Sahadab Colony, Umer Block, Shadab Town, Multan Road, Sahiwal, Punjab, Pakistan"),
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=NOVA+Eye+Centre+Al+Rehmat+Hospital+Sahiwal",
   },
   {
     id: "pakpattan",
     city: "Pakpattan",
     hospital: "Al-Shifa Hospital",
-    address: "Street address to be confirmed, Pakpattan",
+    address: "Mandi Mor, Pakpattan, Punjab, Pakistan",
     timings: "Clinic timings to be confirmed",
     phoneDisplay: "0325-6553573",
     phoneTel: "+923256553573",
     whatsapp: "https://wa.me/923256553573?text=" + encodeURIComponent("Assalam o Alaikum, I would like to book an eye checkup at NOVA EYE CENTRE Pakpattan."),
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Al-Shifa Hospital Pakpattan"),
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=NOVA+Eye+Centre+Al+Shifa+Hospital+Mandi+Mor+Pakpattan",
   },
 ];
 
