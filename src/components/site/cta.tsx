@@ -56,7 +56,7 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
-      <span className="eyebrow">{eyebrow}</span>
+      <span className={cn("eyebrow", tone === "ink" && "eyebrow-ink")}>{eyebrow}</span>
       <h2
         className={cn(
           "mt-3 text-3xl font-bold leading-tight md:text-4xl",
@@ -78,17 +78,22 @@ export function Logo({ tone = "default" }: { tone?: "default" | "ink" }) {
   // PLACEHOLDER mark: swap for the official clinic logo when provided.
   return (
     <span className="flex items-center gap-2.5">
-      <svg viewBox="0 0 40 40" className="size-10" aria-hidden="true">
-        <circle cx="20" cy="20" r="19" className={tone === "ink" ? "fill-ink-foreground/10" : "fill-primary"} />
-        <path d="M6 20c3.5-6 8.5-9 14-9s10.5 3 14 9c-3.5 6-8.5 9-14 9S9.5 26 6 20Z" className="fill-ink-foreground" />
-        <circle cx="20" cy="20" r="6" className="fill-accent" />
-        <circle cx="20" cy="20" r="2.5" className="fill-ink" />
+      {/* Infinity mark in brand royal blue with sky-blue accent dot */}
+      <svg viewBox="0 0 48 32" className="h-9 w-12" aria-hidden="true">
+        <path
+          d="M24 16c-4-5.5-7.5-8.5-11.5-8.5a8.5 8.5 0 0 0 0 17c4 0 7.5-3 11.5-8.5Zm0 0c4 5.5 7.5 8.5 11.5 8.5a8.5 8.5 0 0 0 0-17c-4 0-7.5 3-11.5 8.5Z"
+          fill="none"
+          strokeWidth="4.5"
+          strokeLinecap="round"
+          className={tone === "ink" ? "stroke-ink-foreground" : "stroke-primary"}
+        />
+        <circle cx="38" cy="7" r="4" className="fill-accent stroke-background" strokeWidth="2" />
       </svg>
       <span className="leading-none">
         <span className={cn("block font-display text-xl font-extrabold tracking-tight", tone === "ink" ? "text-ink-foreground" : "text-primary")}>
           NOVA
         </span>
-        <span className={cn("block text-[0.62rem] font-bold tracking-[0.28em]", tone === "ink" ? "text-ink-muted" : "text-accent")}>
+        <span className={cn("block text-[0.62rem] font-bold tracking-[0.28em]", tone === "ink" ? "text-ink-muted" : "text-foreground")}>
           EYE CENTRE
         </span>
       </span>

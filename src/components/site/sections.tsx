@@ -15,9 +15,9 @@ export function Hero() {
       <div className="grid-dots absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
       <div className="container-site relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]">
         <div className="animate-fade-up">
-          <span className="eyebrow"><span className="size-1.5 rounded-full bg-accent" />Eye care clinic · Sahiwal & Pakpattan</span>
-          <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
-            Expert Eye Care in <span className="text-accent">Sahiwal & Pakpattan</span>
+          <span className="eyebrow"><span className="size-1.5 rounded-full bg-primary" />Eye care clinic · Sahiwal & Pakpattan</span>
+          <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+            Expert Eye Care in <span className="text-primary">Sahiwal & Pakpattan</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Thorough eye examinations, cataract surgery and treatment for common eye conditions — for adults and children, close to home.
@@ -33,7 +33,7 @@ export function Hero() {
               { icon: Baby, title: "All ages", text: "Adults & children" },
             ].map(({ icon: Icon, title, text }) => (
               <li key={title} className="flex items-center gap-3">
-                <span className="grid size-10 place-items-center rounded-xl bg-accent-soft text-accent"><Icon className="size-5" /></span>
+                <span className="grid size-10 place-items-center rounded-xl bg-accent-soft text-primary"><Icon className="size-5" /></span>
                 <span><b className="block text-sm text-primary">{title}</b><span className="text-sm text-muted-foreground">{text}</span></span>
               </li>
             ))}
@@ -71,7 +71,7 @@ export function SpecialOffer() {
               <div>
                 <span className="text-sm uppercase tracking-widest text-primary-foreground/70">Only</span>
                 <p className="font-display text-5xl font-extrabold">200</p>
-                <span className="text-sm font-semibold text-accent-soft">PKR · Eye checkup</span>
+                <span className="text-sm font-semibold text-accent">PKR · Eye checkup</span>
               </div>
             </div>
           </div>
@@ -143,8 +143,8 @@ export function Services() {
         <SectionHeading eyebrow="Our services" title="Comprehensive eye care for all ages" intro="From routine checkups to surgical treatment, under one roof." />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(({ icon: Icon, title, text }) => (
-            <article key={title} className="group rounded-2xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lift">
-              <span className="grid size-12 place-items-center rounded-xl bg-primary-soft text-primary transition-colors group-hover:bg-accent group-hover:text-accent-foreground"><Icon className="size-6" /></span>
+            <article key={title} className="group rounded-2xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-lift">
+              <span className="grid size-12 place-items-center rounded-xl bg-primary-soft text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"><Icon className="size-6" /></span>
               <h3 className="mt-5 text-lg font-bold text-primary">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
             </article>
@@ -176,7 +176,7 @@ export function WhyUs() {
         <div className="grid gap-5 sm:grid-cols-2">
           {items.map(({ icon: Icon, title, text }) => (
             <article key={title} className="rounded-2xl bg-card p-6 shadow-soft">
-              <Icon className="size-7 text-accent" />
+              <Icon className="size-7 text-primary" />
               <h3 className="mt-4 font-bold text-primary">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{text}</p>
             </article>
@@ -204,9 +204,9 @@ export function Locations() {
                 </div>
               </div>
               <div className="space-y-4 p-6">
-                <p className="flex gap-3 text-sm text-muted-foreground"><MapPin className="size-5 shrink-0 text-accent" />{b.address}</p>
-                <p className="flex gap-3 text-sm text-muted-foreground"><Clock className="size-5 shrink-0 text-accent" />{b.timings}</p>
-                <a href={`tel:${b.phoneTel}`} className="flex gap-3 text-sm font-semibold text-primary hover:underline"><Phone className="size-5 shrink-0 text-accent" />{b.phoneDisplay}</a>
+                <p className="flex gap-3 text-sm text-muted-foreground"><MapPin className="size-5 shrink-0 text-primary" />{b.address}</p>
+                <p className="flex gap-3 text-sm text-muted-foreground"><Clock className="size-5 shrink-0 text-primary" />{b.timings}</p>
+                <a href={`tel:${b.phoneTel}`} className="flex gap-3 text-sm font-semibold text-primary hover:underline"><Phone className="size-5 shrink-0 text-primary" />{b.phoneDisplay}</a>
                 <div className="grid gap-3 pt-2 sm:grid-cols-3">
                   <Cta href={`tel:${b.phoneTel}`} variant="primary" size="sm"><Phone />Call</Cta>
                   <Cta href={b.whatsapp} variant="whatsapp" size="sm"><MessageCircle />WhatsApp</Cta>
@@ -228,7 +228,7 @@ export function Testimonials() {
       <div className="container-site">
         <SectionHeading eyebrow="Patient testimonials" title="Hear from our patients" intro="We share only genuine, verified patient reviews." />
         <div className="mx-auto mt-12 max-w-2xl rounded-3xl border bg-card p-10 text-center shadow-soft">
-          <div className="flex justify-center gap-1 text-accent">
+          <div className="flex justify-center gap-1 text-primary">
             {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-6 fill-current" />)}
           </div>
           <p className="mt-5 text-lg text-foreground">Verified patient reviews will appear here soon.</p>
