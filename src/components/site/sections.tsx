@@ -263,30 +263,45 @@ export function Locations() {
   );
 }
 
-/* 8. Testimonials — genuine reviews only */
+/* 8. Testimonials — genuine reviews only (copied from Google reviews) */
+const reviews = [
+  { name: "Umer Amin", text: "High qualified staff. Clean environment. Doctor Mehmood Asghar sb so professional and kind with patient." },
+  { name: "Mudassar Ali Asghar", text: "Great place to have eye check up and all kind of eye procedure." },
+  { name: "Muhammad Fayyaz", text: "So cooperative staff, clean environment. Professional doctors and staff." },
+];
+
 export function Testimonials() {
   return (
     <section aria-labelledby="reviews-title" className="section-pad bg-secondary">
       <div className="container-site">
-        <SectionHeading eyebrow="Patient testimonials" title="Hear from our patients" intro="We share only genuine, verified patient reviews." />
-        <div className="mx-auto mt-12 max-w-2xl rounded-3xl border bg-card p-10 text-center shadow-soft">
-          <div className="flex justify-center gap-1 text-primary">
-            {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-6 fill-current" />)}
-          </div>
-          <p className="mt-5 text-lg text-foreground">Verified patient reviews will appear here soon.</p>
-          <p className="mt-2 text-sm text-muted-foreground">Visited NOVA EYE CENTRE? Your feedback helps other patients choose with confidence.</p>
-          <div className="mt-8 flex justify-center">
-            {clinic.googleReviewsUrl ? (
-              <Cta href={clinic.googleReviewsUrl} variant="primary"><Star />Read & write Google reviews</Cta>
-            ) : (
-              <Cta href={primaryBranch.whatsapp} variant="outline"><MessageCircle />Share your experience</Cta>
-            )}
-          </div>
+        <SectionHeading eyebrow="Patient testimonials" title="Hear from our patients" intro="Genuine reviews shared by our patients on Google." />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {reviews.map((r) => (
+            <figure key={r.name} className="flex flex-col rounded-3xl border bg-card p-8 shadow-soft">
+              <span aria-hidden className="text-5xl font-bold leading-none text-accent">“</span>
+              <blockquote className="mt-2 flex-1 text-base leading-relaxed text-foreground">{r.text}</blockquote>
+              <figcaption className="mt-6 flex items-center gap-3 border-t pt-5">
+                <span className="flex size-10 items-center justify-center rounded-full bg-primary-soft font-semibold text-primary">{r.name.charAt(0)}</span>
+                <span>
+                  <span className="block font-semibold text-primary">{r.name}</span>
+                  <span className="block text-xs text-muted-foreground">Google review</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="mt-10 flex justify-center">
+          {clinic.googleReviewsUrl ? (
+            <Cta href={clinic.googleReviewsUrl} variant="primary"><Star />Read & write Google reviews</Cta>
+          ) : (
+            <Cta href={primaryBranch.whatsapp} variant="outline"><MessageCircle />Share your experience</Cta>
+          )}
         </div>
       </div>
     </section>
   );
 }
+
 
 /* 9. FAQs */
 const faqs = [
