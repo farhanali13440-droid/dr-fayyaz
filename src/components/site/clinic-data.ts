@@ -28,7 +28,7 @@ export const branches: Branch[] = [
     id: "sahiwal",
     city: "Sahiwal",
     hospital: "Al-Rehmat Hospital",
-    address: "6, Sahadab Colony, Umer Block, Shadab Town, Multan Road, Sahiwal, Punjab, Pakistan",
+    address: "6 Umer Block, Shadab Town, Multan Road, Sahiwal, Punjab, Pakistan",
     timings: "Wed, Fri & Sun: 2–5 PM | Mon, Tue, Thu & Sat: Closed",
     phoneDisplay: "0300-6913585",
     phoneTel: "+923006913585",
