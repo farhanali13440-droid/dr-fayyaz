@@ -117,13 +117,24 @@ export function Cataract() {
     "Pre-surgery assessment and guidance on the right lens",
     "Follow-up care after your procedure",
   ];
-  if (clinic.sutureClaimVerified) points.unshift("Selected surgeries without injection and suture");
+  if (clinic.noInjectionClaimVerified) points.unshift("Carried out without an injection");
   return (
     <section id="cataract" aria-labelledby="cataract-title" className="section-pad bg-ink text-ink-foreground">
       <div className="container-site grid items-center gap-12 lg:grid-cols-2">
         <div>
           <SectionHeading align="left" tone="ink" eyebrow="Cataract surgery" title="Clearer vision with modern cataract surgery" intro="If cloudy or blurred vision is affecting daily life, our team will assess your eyes and explain the options available to you." />
-          <ul className="mt-8 space-y-3">
+          {clinic.noInjectionClaimVerified && (
+            <div className="mt-8 flex items-start gap-4 rounded-2xl border border-accent/40 bg-accent/10 p-5 sm:p-6">
+              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-accent text-ink">
+                <ShieldCheck className="size-6" />
+              </span>
+              <div>
+                <p className="font-display text-lg font-bold text-ink-foreground sm:text-xl">Cataract surgery without injection</p>
+                <p className="mt-1 text-sm leading-relaxed text-ink-muted">Every cataract operation at NOVA Eye Centre is carried out without an injection — a real comfort advantage for patients who are nervous about needles.</p>
+              </div>
+            </div>
+          )}
+          <ul className="mt-6 space-y-3">
             {points.map((p) => (
               <li key={p} className="flex gap-3"><CheckCircle2 className="mt-0.5 size-5 shrink-0 text-accent" /><span className="text-ink-muted">{p}</span></li>
             ))}
