@@ -6,7 +6,7 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Cta, Logo, SectionHeading } from "./cta";
 import clinicPhoto from "@/assets/nova-cataract-surgery.jpg.asset.json";
-import examPhoto from "@/assets/eye-examination.png.asset.json";
+import examPhoto from "@/assets/nova-pakpattan-exam.jpg.asset.json";
 import theatrePhoto from "@/assets/nova-operation-theatre.jpg.asset.json";
 import sahiwalSign from "@/assets/nova-sahiwal-sign.png.asset.json";
 import pakpattanSign from "@/assets/nova-pakpattan-sign.png.asset.json";
@@ -201,7 +201,7 @@ export function WhyUs() {
       <div className="container-site grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
         <div>
           <SectionHeading align="left" eyebrow="Why choose us" title="Care you can see. Trust you can feel." intro="NOVA EYE CENTRE brings dependable, affordable eye care to two communities." />
-          <img src={examPhoto.url} alt="Eye specialist examining a patient with a slit-lamp microscope" width={1536} height={1024} loading="lazy" className="mt-8 w-full rounded-3xl" />
+          <img src={examPhoto.url} alt="NOVA Eye Centre Pakpattan eye specialist examining a patient with a slit-lamp microscope" width={1200} height={1600} loading="lazy" className="mt-8 aspect-[4/3] w-full rounded-3xl object-cover object-[center_30%] shadow-soft" />
           {/* PLACEHOLDER: add verified doctor name and qualifications here */}
           <div className="mt-8 rounded-2xl border border-dashed bg-card p-5 text-sm text-muted-foreground">
             Doctor profile and qualifications will be added once confirmed by the clinic.
