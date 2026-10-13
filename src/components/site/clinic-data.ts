@@ -29,7 +29,7 @@ export const branches: Branch[] = [
     city: "Sahiwal",
     hospital: "Al-Rehmat Hospital",
     address: "6, Sahadab Colony, Umer Block, Shadab Town, Multan Road, Sahiwal, Punjab, Pakistan",
-    timings: "Clinic timings to be confirmed",
+    timings: "Wed, Fri & Sun: 2–5 PM | Mon, Tue, Thu & Sat: Closed",
     phoneDisplay: "0300-6913585",
     phoneTel: "+923006913585",
     whatsapp: "https://wa.me/923006913585?text=" + encodeURIComponent("Assalam o Alaikum, I would like to book an eye checkup at NOVA EYE CENTRE Sahiwal."),
