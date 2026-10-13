@@ -63,7 +63,7 @@ export function Hero() {
           </div>
           <div className="absolute bottom-4 left-0 flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-lift sm:left-4">
             <span className="grid size-11 place-items-center rounded-xl bg-primary text-primary-foreground"><ScanEye className="size-5" /></span>
-            <span><span className="block text-xs text-muted-foreground">Eye checkup</span><b className="font-display text-lg text-primary">PKR 200</b></span>
+            <span><span className="block text-xs text-muted-foreground">Eye checkup · Sahiwal</span><b className="font-display text-lg text-primary">PKR 200</b></span>
           </div>
         </div>
       </div>
@@ -79,8 +79,8 @@ export function SpecialOffer() {
         <div className="grid items-center gap-10 overflow-hidden rounded-3xl border bg-card p-8 shadow-soft md:p-14 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <span className="eyebrow">Special offer</span>
-            <h2 id="offer-title" className="mt-3 text-3xl font-bold text-primary md:text-4xl">Complete eye checkup for just PKR 200</h2>
-            <p className="mt-4 max-w-lg text-muted-foreground">An eye examination for adults, seniors and children at either branch. Book ahead on WhatsApp to reduce your waiting time.</p>
+            <h2 id="offer-title" className="mt-3 text-3xl font-bold text-primary md:text-4xl">Complete eye checkup for just PKR 200 in Sahiwal</h2>
+            <p className="mt-4 max-w-lg text-muted-foreground">An eye examination for adults, seniors and children at our Sahiwal branch (Al-Rehmat Hospital). Book ahead on WhatsApp to reduce your waiting time.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Cta href={primaryBranch.whatsapp} variant="whatsapp" size="lg"><MessageCircle />Book on WhatsApp</Cta>
               <Cta href={`tel:${primaryBranch.phoneTel}`} variant="primary" size="lg"><Phone />Call Now</Cta>
@@ -307,7 +307,7 @@ export function Testimonials() {
 const faqs = [
   { q: "How much does cataract surgery cost?", a: "Cataract surgery ranges from PKR 25,000 to PKR 120,000, depending mainly on the type of lens. Your doctor will explain the options after examining your eyes." },
   { q: "How do I know if I need cataract surgery?", a: "Common signs include cloudy or blurred vision, glare from lights and faded colours. Only an eye examination can confirm whether surgery is right for you." },
-  { q: "How much is an eye checkup?", a: "A complete eye checkup costs PKR 200 at both our Sahiwal and Pakpattan branches." },
+  { q: "How much is an eye checkup?", a: "The PKR 200 complete eye checkup is available at our Sahiwal branch (Al-Rehmat Hospital) only. Please contact our Pakpattan branch for its checkup fee." },
   { q: "Do you examine children's eyes?", a: "Yes. We offer children's eye checkups and treat conditions such as squint and blocked tear ducts (NLD). Early checkups help detect problems sooner." },
   { q: "How do I book an appointment?", a: "Message or call us on WhatsApp — Sahiwal: 0300-6913585, Pakpattan: 0325-6553573 — and our team will arrange a suitable time." },
 ];
@@ -340,7 +340,7 @@ export function FinalCta() {
           <div className="absolute -bottom-24 -left-24 size-72 rounded-full bg-ink/40 blur-3xl" />
           <div className="relative">
             <h2 id="cta-title" className="mx-auto max-w-2xl text-3xl font-bold md:text-5xl">Take the First Step Towards Clearer Vision</h2>
-            <p className="mx-auto mt-5 max-w-xl text-primary-foreground/80">Book your PKR 200 eye checkup today at Sahiwal or Pakpattan.</p>
+            <p className="mx-auto mt-5 max-w-xl text-primary-foreground/80">Book your PKR 200 eye checkup today at our Sahiwal branch.</p>
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
               <Cta href={primaryBranch.whatsapp} variant="whatsapp" size="lg"><MessageCircle />WhatsApp Us</Cta>
               <Cta href={`tel:${primaryBranch.phoneTel}`} variant="light" size="lg"><Phone />Call Now</Cta>
