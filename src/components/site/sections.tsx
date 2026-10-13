@@ -151,7 +151,7 @@ export function Cataract() {
             width={1600}
             height={1200}
             loading="lazy"
-            className="mb-8 aspect-[4/3] w-full rounded-2xl object-cover object-[center_60%]"
+            className="mb-8 aspect-[4/3] w-full rounded-2xl object-cover object-center"
           />
           <div className="grid grid-cols-3 gap-3 text-center">
             {["Standard", "Premium", "Advanced"].map((l) => (
