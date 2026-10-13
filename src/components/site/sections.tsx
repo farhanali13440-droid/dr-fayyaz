@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Cta, Logo, SectionHeading } from "./cta";
 import clinicPhoto from "@/assets/nova-cataract-surgery.jpg.asset.json";
 import examPhoto from "@/assets/nova-pakpattan-exam.jpg.asset.json";
-import theatrePhoto from "@/assets/nova-operation-theatre.jpg.asset.json";
+import theatrePhoto from "@/assets/nova-cataract-microscope.jpg.asset.json";
 import sahiwalSign from "@/assets/nova-sahiwal-sign.png.asset.json";
 import pakpattanSign from "@/assets/nova-pakpattan-sign.png.asset.json";
 import { EyeChartIllustration } from "./illustrations";
@@ -147,9 +147,9 @@ export function Cataract() {
         <div className="rounded-3xl border border-ink-foreground/10 bg-ink-foreground/5 p-8 md:p-10">
           <img
             src={theatrePhoto.url}
-            alt="NOVA Eye Centre eye surgeon in the operation theatre under surgical lights"
-            width={1440}
-            height={1920}
+            alt="NOVA Eye Centre surgeon performing cataract surgery at the operating microscope"
+            width={1600}
+            height={1200}
             loading="lazy"
             className="mb-8 aspect-[4/3] w-full rounded-2xl object-cover object-[center_60%]"
           />
