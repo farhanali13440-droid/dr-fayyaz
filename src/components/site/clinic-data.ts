@@ -7,8 +7,9 @@ export const clinic = {
   instagramUrl: "https://www.instagram.com/novaeyecentre",
   googleReviewsUrl: "", // PLACEHOLDER: paste Google Business review link
   doctorName: "", // PLACEHOLDER
-  // Show "surgery without injection and suture" only once the clinic verifies it.
-  sutureClaimVerified: false,
+  // Clinic confirmed (Oct 2026): cataract surgery is done without an injection.
+  // "and suture" is still unverified, so it stays out of the copy.
+  noInjectionClaimVerified: true,
 };
 
 export type Branch = {

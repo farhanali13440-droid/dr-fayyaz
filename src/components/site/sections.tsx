@@ -117,7 +117,7 @@ export function Cataract() {
     "Pre-surgery assessment and guidance on the right lens",
     "Follow-up care after your procedure",
   ];
-  if (clinic.sutureClaimVerified) points.unshift("Selected surgeries without injection and suture");
+  if (clinic.noInjectionClaimVerified) points.unshift("Carried out without an injection");
   return (
     <section id="cataract" aria-labelledby="cataract-title" className="section-pad bg-ink text-ink-foreground">
       <div className="container-site grid items-center gap-12 lg:grid-cols-2">
