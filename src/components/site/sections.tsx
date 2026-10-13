@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Cta, Logo, SectionHeading } from "./cta";
-import clinicPhoto from "@/assets/nova-sahiwal-clinic.jpg.asset.json";
+import clinicPhoto from "@/assets/nova-cataract-surgery.jpg.asset.json";
 import examPhoto from "@/assets/eye-examination.png.asset.json";
 import theatrePhoto from "@/assets/nova-operation-theatre.jpg.asset.json";
 import sahiwalSign from "@/assets/nova-sahiwal-sign.png.asset.json";
@@ -54,7 +54,7 @@ export function Hero() {
             <div className="absolute -inset-3 rounded-[2rem] bg-accent-soft" />
             <img
               src={clinicPhoto.url}
-              alt="Eye specialist at NOVA Eye Centre Sahiwal beside a slit-lamp examination microscope"
+              alt="NOVA Eye Centre surgeon performing eye surgery with an operating microscope"
               width={1440}
               height={1920}
               fetchPriority="high"
