@@ -10,6 +10,7 @@ import examPhoto from "@/assets/nova-pakpattan-exam.jpg.asset.json";
 import theatrePhoto from "@/assets/nova-cataract-microscope.jpg.asset.json";
 import sahiwalSign from "@/assets/nova-sahiwal-sign.png.asset.json";
 import pakpattanSign from "@/assets/nova-pakpattan-sign.png.asset.json";
+import drMehmoodPhoto from "@/assets/dr-mehmood-asghar.jpg.asset.json";
 import { EyeChartIllustration } from "./illustrations";
 import { branches, clinic, navLinks, primaryBranch } from "./clinic-data";
 
@@ -276,7 +277,7 @@ export function Locations() {
 
 /* 7b. Team — add doctor photos by setting `photo` to an uploaded asset URL */
 const doctors: { name: string; quals: string; photo?: string }[] = [
-  { name: "Dr. Mehmood Asghar", quals: "MBBS, FCPS, FRCS" },
+  { name: "Dr. Mehmood Asghar", quals: "MBBS, FCPS, FRCS", photo: drMehmoodPhoto.url },
   { name: "Dr. Mudassar Ali Asghar", quals: "MBBS, IMM (Ophthalmology)" },
 ];
 
@@ -289,7 +290,9 @@ export function Team() {
           {doctors.map((d) => (
             <article key={d.name} className="flex flex-col items-center rounded-3xl border bg-card p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               {d.photo ? (
-                <img src={d.photo} alt={d.name} loading="lazy" className="size-40 rounded-full object-cover object-top ring-4 ring-accent-soft" />
+                <span className="block size-40 overflow-hidden rounded-full ring-4 ring-accent-soft">
+                  <img src={d.photo} alt={d.name} loading="lazy" className="size-full origin-[58%_40%] scale-[1.9] object-cover" />
+                </span>
               ) : (
                 <span className="grid size-40 place-items-center rounded-full bg-primary-soft text-primary ring-4 ring-accent-soft">
                   <Stethoscope className="size-14" />
