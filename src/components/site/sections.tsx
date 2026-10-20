@@ -274,6 +274,38 @@ export function Locations() {
   );
 }
 
+/* 7b. Team — add doctor photos by setting `photo` to an uploaded asset URL */
+const doctors: { name: string; quals: string; photo?: string }[] = [
+  { name: "Dr. Mehmood Asghar", quals: "MBBS, FCPS, FRCS" },
+  { name: "Dr. Mudassar Ali Asghar", quals: "MBBS, IMM (Ophthalmology)" },
+];
+
+export function Team() {
+  return (
+    <section id="team" aria-labelledby="team-title" className="section-pad bg-secondary">
+      <div className="container-site">
+        <SectionHeading eyebrow="Our team" title="Meet our doctors" intro="Experienced eye specialists caring for patients in Sahiwal and Pakpattan." />
+        <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+          {doctors.map((d) => (
+            <article key={d.name} className="flex flex-col items-center rounded-3xl border bg-card p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+              {d.photo ? (
+                <img src={d.photo} alt={d.name} loading="lazy" className="size-40 rounded-full object-cover object-top ring-4 ring-accent-soft" />
+              ) : (
+                <span className="grid size-40 place-items-center rounded-full bg-primary-soft text-primary ring-4 ring-accent-soft">
+                  <Stethoscope className="size-14" />
+                </span>
+              )}
+              <h3 className="mt-6 text-xl font-bold text-primary">{d.name}</h3>
+              <p className="mt-2 rounded-full bg-accent-soft px-4 py-1 text-sm font-semibold text-primary">{d.quals}</p>
+              <p className="mt-3 text-sm text-muted-foreground">Eye Specialist · NOVA EYE CENTRE</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* 8. Testimonials — genuine reviews only (copied from Google reviews) */
 const reviews = [
   { name: "Umer Amin", text: "High qualified staff. Clean environment. Doctor Mehmood Asghar sb so professional and kind with patient." },
