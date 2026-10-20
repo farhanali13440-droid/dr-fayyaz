@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/header";
 import {
-  Cataract, Faqs, FinalCta, Hero, Locations, Services, SiteFooter, SpecialOffer, Testimonials, WhyUs,
+  Cataract, Faqs, FinalCta, Hero, Locations, Services, SiteFooter, SpecialOffer, Team, Testimonials, WhyUs,
 } from "@/components/site/sections";
 
 const title = "NOVA EYE CENTRE — Expert Eye Care in Sahiwal & Pakpattan";
@@ -33,6 +33,7 @@ function Index() {
         <Services />
         <WhyUs />
         <Locations />
+        <Team />
         <Testimonials />
         <Faqs />
         <FinalCta />
