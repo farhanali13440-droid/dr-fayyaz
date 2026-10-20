@@ -11,6 +11,7 @@ import theatrePhoto from "@/assets/nova-cataract-microscope.jpg.asset.json";
 import sahiwalSign from "@/assets/nova-sahiwal-sign.png.asset.json";
 import pakpattanSign from "@/assets/nova-pakpattan-sign.png.asset.json";
 import drMehmoodPhoto from "@/assets/dr-mehmood-asghar.jpg.asset.json";
+import drMudassarPhoto from "@/assets/dr-mudassar-ali-asghar.jpg.asset.json";
 import { EyeChartIllustration } from "./illustrations";
 import { branches, clinic, navLinks, primaryBranch } from "./clinic-data";
 
@@ -278,7 +279,7 @@ export function Locations() {
 /* 7b. Team — add doctor photos by setting `photo` to an uploaded asset URL */
 const doctors: { name: string; quals: string; photo?: string }[] = [
   { name: "Dr. Mehmood Asghar", quals: "MBBS, FCPS, FRCS", photo: drMehmoodPhoto.url },
-  { name: "Dr. Mudassar Ali Asghar", quals: "MBBS, IMM (Ophthalmology)" },
+  { name: "Dr. Mudassar Ali Asghar", quals: "MBBS, IMM (Ophthalmology)", photo: drMudassarPhoto.url },
 ];
 
 export function Team() {
