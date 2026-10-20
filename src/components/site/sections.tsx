@@ -290,7 +290,9 @@ export function Team() {
           {doctors.map((d) => (
             <article key={d.name} className="flex flex-col items-center rounded-3xl border bg-card p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               {d.photo ? (
-                <img src={d.photo} alt={d.name} loading="lazy" className="size-40 rounded-full object-cover object-[60%_35%] ring-4 ring-accent-soft" />
+                <span className="block size-40 overflow-hidden rounded-full ring-4 ring-accent-soft">
+                  <img src={d.photo} alt={d.name} loading="lazy" className="size-full origin-[58%_40%] scale-[1.9] object-cover" />
+                </span>
               ) : (
                 <span className="grid size-40 place-items-center rounded-full bg-primary-soft text-primary ring-4 ring-accent-soft">
                   <Stethoscope className="size-14" />
